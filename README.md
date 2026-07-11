@@ -186,13 +186,6 @@ Through this project, I learned how to:
 - [ ] Add CI/CD pipeline using GitHub Actions
 - [ ] Add automated testing
 
----
-
-## 👨‍💻 Author
-
-**Abhinav Singh**
-
-- GitHub: https://github.com/ui-abhii
 
 ---
 
