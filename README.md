@@ -6,7 +6,7 @@ A Dockerized **Django Notice Board** application demonstrating containerization 
 
 ## 📌 Project Overview
 
-This application allows users to manage notices through a Django web interface. The project has been containerized using Docker, enabling consistent deployment across different environments.
+The project has been containerized using Docker and configured to use PostgreSQL as the database, enabling a more production-oriented development setup.
 
 ---
 
@@ -15,8 +15,10 @@ This application allows users to manage notices through a Django web interface. 
 - 📝 Notice Board web application
 - 🐍 Built with Django
 - 🐳 Dockerized using a custom Dockerfile
-- 📦 Dependency management with `requirements.txt`
+- 🐘 PostgreSQL database integration
+- 📦 Dependency management with requirements.txt
 - 🔐 Django Admin Panel
+- 🔑 Environment-based database configuration
 - 💻 Cross-platform deployment using Docker
 
 ---
@@ -27,8 +29,8 @@ This application allows users to manage notices through a Django web interface. 
 |------------|---------|
 | Python | Programming Language |
 | Django | Web Framework |
+| PostgreSQL | Relational Database |
 | Docker | Containerization |
-| SQLite | Database |
 | Git | Version Control |
 | GitHub | Code Hosting |
 
@@ -36,19 +38,13 @@ This application allows users to manage notices through a Django web interface. 
 
 ## 📂 Project Structure
 
-```text
-notice-board-app/
-│
-├── demo/                  # Django application
-├── devops/                # Django project configuration
 ├── Dockerfile             # Docker image configuration
 ├── .dockerignore
+├── .env.example           # PostgreSQL environment variables template
 ├── .gitignore
 ├── manage.py
 ├── requirements.txt
 └── README.md
-```
-
 ---
 
 ## ⚙️ Prerequisites
@@ -57,8 +53,25 @@ Before running the project, ensure you have:
 
 - Docker Desktop
 - Git
+- PostgreSQL
 
 ---
+
+## 🐘 PostgreSQL Configuration
+
+The application uses PostgreSQL as its database.
+
+Create a `.env` file based on the provided `.env.example` file and configure your PostgreSQL database credentials.
+
+Example:
+
+```env
+DB_NAME=noticeboard
+DB_USER=noticeboard
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=5432
+```
 
 ## 📥 Clone the Repository
 
@@ -172,6 +185,8 @@ Through this project, I learned how to:
 - Build and run Docker images
 - Expose application ports
 - Manage Python dependencies inside containers
+- Configure Django to use PostgreSQL
+- Manage database configuration using environment variables
 - Use Git and GitHub for version control
 - Configure Docker Desktop with WSL 2
 
@@ -180,7 +195,6 @@ Through this project, I learned how to:
 ## 🚀 Future Improvements
 
 - [ ] Add Docker Compose support
-- [ ] Use PostgreSQL instead of SQLite
 - [ ] Deploy on AWS EC2
 - [ ] Configure Nginx and Gunicorn
 - [ ] Add CI/CD pipeline using GitHub Actions
@@ -189,4 +203,4 @@ Through this project, I learned how to:
 
 ---
 
-⭐ If you found this project useful, consider giving it a star!
+
