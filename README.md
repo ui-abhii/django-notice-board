@@ -6,7 +6,9 @@ A Dockerized **Django Notice Board** application demonstrating containerization 
 
 ## 📌 Project Overview
 
-The project has been containerized using Docker and configured to use PostgreSQL as the database, enabling a more production-oriented development setup.
+The project has been containerized using Docker and configured to use PostgreSQL as the database.
+
+Docker Compose is used to run the Django application and PostgreSQL database as separate services, with container networking, healthchecks, service dependencies, and persistent database storage.
 
 ---
 
@@ -20,27 +22,33 @@ The project has been containerized using Docker and configured to use PostgreSQL
 - 🔐 Django Admin Panel
 - 🔑 Environment-based database configuration
 - 💻 Cross-platform deployment using Docker
+- - 🧩 Docker Compose multi-container setup
+- 🔗 Container networking between Django and PostgreSQL
+- ❤️ PostgreSQL healthcheck
+- 💾 Persistent PostgreSQL volume
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Programming Language |
-| Django | Web Framework |
-| PostgreSQL | Relational Database |
-| Docker | Containerization |
-| Git | Version Control |
-| GitHub | Code Hosting |
+| **Technology** | **Purpose** |
+|----------------|-------------|
+| Python         | Programming Language |
+| Django         | Web Framework |
+| PostgreSQL     | Relational Database |
+| Docker         | Containerization |
+| Docker Compose | Multi-container orchestration |
+| Git            | Version Control |
+| GitHub         | Code Hosting |
 
 ---
-
 ## 📂 Project Structure
 
-├── Dockerfile             # Docker image configuration
+```text
+├── Dockerfile
+├── docker-compose.yml
 ├── .dockerignore
-├── .env.example           # PostgreSQL environment variables template
+├── .env.example
 ├── .gitignore
 ├── manage.py
 ├── requirements.txt
@@ -49,12 +57,10 @@ The project has been containerized using Docker and configured to use PostgreSQL
 
 ## ⚙️ Prerequisites
 
-Before running the project, ensure you have:
-
 - Docker Desktop
 - Git
-- PostgreSQL
 
+> PostgreSQL does not need to be installed separately because it runs in a Docker container.
 ---
 
 ## 🐘 PostgreSQL Configuration
@@ -72,6 +78,13 @@ DB_PASSWORD=your_password
 DB_HOST=localhost
 DB_PORT=5432
 ```
+
+## 🐳 Run with Docker Compose
+
+Build and start the Django and PostgreSQL services:
+
+```bash
+docker compose up --build
 
 ## 📥 Clone the Repository
 
@@ -189,12 +202,12 @@ Through this project, I learned how to:
 - Manage database configuration using environment variables
 - Use Git and GitHub for version control
 - Configure Docker Desktop with WSL 2
+- Add Docker Compose support
 
 ---
 
 ## 🚀 Future Improvements
 
-- [ ] Add Docker Compose support
 - [ ] Deploy on AWS EC2
 - [ ] Configure Nginx and Gunicorn
 - [ ] Add CI/CD pipeline using GitHub Actions
